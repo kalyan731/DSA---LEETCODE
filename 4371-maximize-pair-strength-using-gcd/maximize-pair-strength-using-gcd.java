@@ -4,10 +4,10 @@ class Solution {
         
         for(int i = 0; i < nums.length;i++){
             for(int j = i+1;j < nums.length;j++){
-                long sum = (long)nums[i]*nums[j];
+                long l = nums[i];
+                long r = nums[j];
                 long g = gcd(nums[i],nums[j]);
-                
-                max = Math.max(max,sum/(g*g));
+                max = Math.max(max,(l*r)/(g*g));
             }
         }
         return max;
