@@ -4,10 +4,9 @@ class Solution {
         
         for(int i = 0; i < nums.length;i++){
             for(int j = i+1;j < nums.length;j++){
-                long l = nums[i];
-                long r = nums[j];
-                long g = gcd(nums[i],nums[j]);
-                max = Math.max(max,(l/g)*(r/g));
+                long sum = (long)nums[i]*nums[j];
+                //long g = gcd(nums[i],nums[j]);
+                max = Math.max(max,sum/(gcd(nums[i],nums[j])));
             }
         }
         return max;
@@ -21,6 +20,6 @@ class Solution {
             b = a%b;
             a = temp;
         }
-        return a;
+        return (long)Math.pow(a,2);
     }
 }
