@@ -7,7 +7,7 @@ class Solution {
                 long l = nums[i];
                 long r = nums[j];
                 long g = gcd(nums[i],nums[j]);
-                max = Math.max(max,(l*r)/(g*g));
+                max = Math.max(max,(l/g)*(r/g));
             }
         }
         return max;
