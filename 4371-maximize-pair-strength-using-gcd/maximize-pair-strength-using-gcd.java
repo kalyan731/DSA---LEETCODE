@@ -6,8 +6,8 @@ class Solution {
             for(int j = i+1;j < nums.length;j++){
                 long sum = (long)nums[i]*nums[j];
                 long g = gcd(nums[i],nums[j]);
-                long val = sum/(g*g);
-                max = Math.max(max,val);
+                
+                max = Math.max(max,sum/(g*g));
             }
         }
         return max;
