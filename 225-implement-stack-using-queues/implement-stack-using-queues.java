@@ -1,9 +1,9 @@
 class MyStack {
-    private Queue<Integer> q;
+    Queue<Integer> q = new ArrayDeque<>();
 
 
     public MyStack() {
-        q = new LinkedList<>();
+       
         
     }
     
@@ -27,7 +27,6 @@ class MyStack {
     }
     
     public boolean empty() {
-        
         return q.isEmpty(); 
         
     }
