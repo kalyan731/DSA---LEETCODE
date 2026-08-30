@@ -17,9 +17,6 @@ class Solution {
         }
         int l = Math.min(mini,maxi);
         int r = Math.max(mini,maxi) ;
-        
-        return Math.min(Math.min(r+1,n-l),l+1+n-r);
-
-        
+        return Math.min(Math.min(r+1,n-l),l+1+n-r);   
     }
 }
