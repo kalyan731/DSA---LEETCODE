@@ -1,0 +1,21 @@
+class Solution {
+    public int minimumDeletions(int[] arr) {
+        int n = arr.length;
+        int mini =0;
+        int maxi = 0;
+        for(int i = 0; i < arr.length;i++){
+            if(arr[maxi] < arr[i] ){
+                maxi = i;
+            
+            }
+            if(arr[mini] > arr[i] ){
+                mini = i;
+            }
+        }
+        int l = Math.min(mini,maxi);
+        int r = Math.max(mini,maxi) ;
+        return Math.min(Math.min(r+1,n-l),l+1+n-r);
+
+        
+    }
+}
