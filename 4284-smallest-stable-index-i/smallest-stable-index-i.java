@@ -3,7 +3,6 @@ class Solution {
         if(nums.length == 1){
             return 0;
         }
-        int score = 0;
         int max = Integer.MIN_VALUE;
         for(int i = 0; i < nums.length;i++){
            
@@ -17,8 +16,8 @@ class Solution {
                 }
 
             }
-            score = max - min;
-            if(score <= k){
+          
+            if( (max - min) <= k){
                 return i;
             }
         }
