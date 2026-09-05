@@ -6,7 +6,7 @@ class Solution {
         for(int i = n - 2;i >=0;i--){
             suff[i] = Math.min(suff[i+1],nums[i]);
         }
-        int maxp = Integer.MIN_VALUE;
+        int maxp = 0;
         for(int i = 0;i < n ;i++){
             maxp = Math.max(maxp,nums[i]);
             if(maxp - suff[i] <= k){
