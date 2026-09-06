@@ -1,33 +1,26 @@
 class Solution {
     public int countGoodRotations(int[] nums) {
-        int n=nums.length;
-        int i=0;
-        int j=n/2;
-        long a=0;
-        long b=0;
-        for(int x=0;x<n/2;x++){
-            a+=nums[x];
-            b+=nums[x+n/2];
+        int n = nums.length;
+        long ts = 0;
+        int count = 0;
+        for(int num : nums){
+            ts += num;
         }
-        int cnt=0;
-        if(a>b){
-            cnt=1;
-        }
-        
-        int k=1;
-        while(k<n){
-            a-=nums[i];
-            a+=nums[j];
-            b-=nums[j];
-            b+=nums[i];
-            if(a>b){
-                cnt++;
-            }
-            i=(i+1)%n;
-            j=(j+1)%n;
-            k++;
-        }
-        return cnt;
+        int half = n/2;
+        long ls = 0;
+        for(int i = 0;i < half;i++){
+            ls += nums[i];
 
+        }
+        for(int k = 0;k < n;k++){
+            long rs = ts - ls;
+            if(ls > rs){
+                count++;
+            }
+            ls -= nums[k];
+            ls += nums[(k+half)%n];
+        }
+        return count;
+    
     }
 }
