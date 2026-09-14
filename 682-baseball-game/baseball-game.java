@@ -1,6 +1,6 @@
 class Solution {
     public int calPoints(String[] arr) {
-        Stack<Integer> st = new Stack<>();
+        Deque<Integer> st = new ArrayDeque<>();
         int n = arr.length;
         
         for(int i = 0; i < n;i++){
